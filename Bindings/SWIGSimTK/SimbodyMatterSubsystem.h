@@ -2445,7 +2445,7 @@ this operator method.
 void calcQDotDot(const State& s,
     const Vector& udot,
     Vector&       qdotdot) const;
-
+#ifndef SWIG
 /** Add in to the given body forces vector a force applied to a station (fixed
 point) S on a body B. The new force is added into the existing spatial force 
 slot for the body. Note that this does not actually apply any forces to the
@@ -2472,7 +2472,7 @@ void addInBodyTorque(const State&           state,
                      MobilizedBodyIndex     mobodIx, 
                      const Vec3&            torqueInG, 
                      Vector_<SpatialVec>&   bodyForcesInG) const;
-#ifndef SWIG
+
 /** Add in to the given mobility forces vector a scalar generalized force, that
 is a force or torque applied to a mobilizer generalized speed. Note 
 that this does not actually apply any forces to the multibody system! This is 
