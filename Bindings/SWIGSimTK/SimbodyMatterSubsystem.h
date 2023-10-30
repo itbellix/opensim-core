@@ -2445,7 +2445,7 @@ this operator method.
 void calcQDotDot(const State& s,
     const Vector& udot,
     Vector&       qdotdot) const;
-#ifndef SWIG
+
 /** Add in to the given body forces vector a force applied to a station (fixed
 point) S on a body B. The new force is added into the existing spatial force 
 slot for the body. Note that this does not actually apply any forces to the
@@ -2468,6 +2468,9 @@ that this does not actually apply any torques to the multibody system! This is
 just a "helper" utility that makes it easier to fill in a body forces array. 
 This has no effect on the system unless you later supply the body forces array 
 for use. Provide the torque vector in the Ground frame. **/
+
+#ifndef SWIG
+
 void addInBodyTorque(const State&           state, 
                      MobilizedBodyIndex     mobodIx, 
                      const Vec3&            torqueInG, 
